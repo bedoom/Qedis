@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.25)
+
+set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -std=c++17")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2 -g -Wall -std=c++17")
+
+OPTION(DEBUG "Debug or release" OFF)
+
+if(DEBUG)
+    set(CMAKE_BUILD_TYPE "Debug")
+else()
+    set(CMAKE_BUILD_TYPE "Release")
+endif()
