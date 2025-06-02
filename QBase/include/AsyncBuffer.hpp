@@ -21,4 +21,10 @@ public:
 
 private:
     Buffer buffer_;
+
+    qeids::UnboundedBuffer tmpBuf_;
+
+    std::mutex backBufLock_;
+    std::atomic<std::size_t> backBytes_;
+    qeids::UnboundedBuffer backBuf_;
 };
