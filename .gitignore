@@ -1,0 +1,8 @@
+# MAC OS
+.DS_Store
+
+#
+build/
+bin/
+./vscode/
+leveldb/
