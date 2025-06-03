@@ -21,5 +21,9 @@ set_target_properties(qbaselib PROPERTIES
     CXX_STANDARD_REQUIRED ON
 )
 
+# add_executable(ConfigParser src/ConfigParser.cpp)
+# target_include_directories(ConfigParser PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+# target_link_libraries(ConfigParser PRIVATE qbaselib)
+
 # add_executable(UnboundedBufferTest src/UnboundedBuffer.cpp)
 # target_include_directories(UnboundedBufferTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
