@@ -20,7 +20,7 @@ public:
     Time(int hour, int min, int sec);
 
     void        Now();
-    uint16_t    MillSeconds() const { return ms_; }
+    uint16_t    MilliSeconds() const { return ms_; }
     std::size_t FormatTime(char* buf) const;
     void        AddDelay(uint64_t delay);
 

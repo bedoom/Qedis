@@ -334,12 +334,12 @@ bool TimerManager::UpdateTimers(const Time& now)
 void TimerManager::AddTimer(Timer* timer)
 {
     uint32_t diff       = static_cast<uint32_t>(timer->triggerTime_ - m_lastCheckTime);
-    uint64_t trigTime   = timer->triggerTime_.MillSeconds();
+    uint64_t trigTime   = timer->triggerTime_.MilliSeconds();
     Timer* pListHead    = nullptr;
 
     if((int32_t)diff < 0)
     {
-        pListHead = m_list1[m_lastCheckTime.MillSeconds() & (LIST1_SIZE - 1)];
+        pListHead = m_list1[m_lastCheckTime.MilliSeconds() & (LIST1_SIZE - 1)];
     }
     else if(diff < static_cast<uint32_t>(LIST1_SIZE))
     {
