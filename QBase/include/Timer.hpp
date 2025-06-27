@@ -52,6 +52,13 @@ public:
     void SetRemainCnt(int32_t remain) { count_ = remain; }
     bool IsWorking() const { return prev_ != nullptr; }
 
+    template <typename F, typename... Args>
+    void SetCallback(F&& f, Args&&... args)
+    {
+        auto temp = std::bind(std::forward<F>(f), std::forward<Args>(args)...);
+        func_ = [temp]() { (void)temp(); };
+    }
+
 private:
     Timer();
 
